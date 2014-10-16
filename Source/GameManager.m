@@ -13,7 +13,9 @@
 @interface GameManager ()
 
 @property (nonatomic, strong) NSArray *invokeData;
+@property (nonatomic, strong) NSMutableArray *invokeDeck;
 @property (nonatomic, strong) NSMutableArray *selectedSpells;
+@property (nonatomic) NSInteger resetsLeft;
 
 @end
 
@@ -30,6 +32,15 @@
         _invokeData = [NSJSONSerialization JSONObjectWithData:json
                                                       options:0
                                                         error:nil];
+        
+        NSUInteger spellCount = [_invokeData count];
+        
+        _invokeDeck = [NSMutableArray arrayWithCapacity:spellCount];
+        
+        for (NSUInteger i = 0; i < spellCount; i++)
+        {
+            [_invokeDeck addObject:@(i)];
+        }
         
         _selectedSpells = [NSMutableArray arrayWithCapacity:3];
         
@@ -81,9 +92,25 @@
 
 - (void)randomizeInvokeSpell
 {
-    NSUInteger invokeIndex = arc4random_uniform((u_int32_t)[_invokeData count]);
+    if (--self.resetsLeft <= 0)
+    {
+        NSUInteger spellCount = [_invokeDeck count];
+        
+        self.resetsLeft = spellCount;
+        
+        // Randomize the deck.
+        for (NSUInteger i = 0; i < spellCount; i++)
+        {
+            NSUInteger randomIndex = arc4random_uniform((u_int32_t)[_invokeData count]);
+            
+            [self.invokeDeck exchangeObjectAtIndex:randomIndex withObjectAtIndex:i];
+        }
+    }
     
-    _invokeSpell = _invokeData[invokeIndex];
+    NSUInteger randomIndex = [[self.invokeDeck objectAtIndex:self.resetsLeft - 1] integerValue];
+    NSLog(@"selected %ld and got %lu", self.resetsLeft - 1, (unsigned long)randomIndex);
+    
+    _invokeSpell = self.invokeData[randomIndex];
 }
 
 - (void)reset
