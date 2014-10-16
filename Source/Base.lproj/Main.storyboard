@@ -144,6 +144,15 @@
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gre-ko-qdD">
+                                <rect key="frame" x="462" y="36" width="122" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="jfk-W8-f0V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,6 +164,8 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="wXa-ml-qrg" firstAttribute="centerY" secondItem="gre-ko-qdD" secondAttribute="centerY" id="I8o-Vu-VQ0"/>
+                            <constraint firstItem="gre-ko-qdD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Oee-Ta-qPM"/>
                             <constraint firstItem="wXa-ml-qrg" firstAttribute="centerX" secondItem="m0k-oR-ut0" secondAttribute="centerX" id="QAz-N5-Jb1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A62-iV-tic" secondAttribute="bottom" constant="32" id="RuN-ch-kAC">
                                 <variation key="heightClass=compact-widthClass=compact" constant="32"/>
@@ -171,6 +182,7 @@
                             </constraint>
                             <constraint firstItem="A62-iV-tic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="oON-Bc-4Fx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XeF-Wi-gUq" secondAttribute="trailing" constant="16" id="umD-3D-o66"/>
+                            <constraint firstItem="gre-ko-qdD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="vAt-ic-6fE"/>
                             <constraint firstItem="XeF-Wi-gUq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="xeP-0T-lMF"/>
                         </constraints>
                         <variation key="default">
@@ -206,6 +218,7 @@
                     <connections>
                         <outlet property="exortButton" destination="OWu-m6-p2K" id="hHY-2n-EPT"/>
                         <outlet property="firstSelection" destination="v4d-Ad-40o" id="bwM-5m-123"/>
+                        <outlet property="highScoreLabel" destination="gre-ko-qdD" id="YOc-Sb-jZG"/>
                         <outlet property="invokeSpell" destination="bH6-VN-69G" id="eYJ-DS-wQQ"/>
                         <outlet property="livesLeftLabel" destination="wXa-ml-qrg" id="pVl-zp-D8i"/>
                         <outlet property="quasButton" destination="FOZ-lG-7cd" id="uYw-8N-enV"/>

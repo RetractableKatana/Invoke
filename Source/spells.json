@@ -1,7 +1,7 @@
 [
- {"Cold Snap"         : ["Quas", "Quas", "Quas"]},
+ { "Cold Snap"         : ["Quas", "Quas", "Quas"]},
  { "Ghost Walk"        : ["Quas", "Quas", "Wex"]},
- {  "Ice Wall"          : ["Quas", "Quas", "Exort"]},
+ { "Ice Wall"          : ["Quas", "Quas", "Exort"]},
  { "Tornado"           : ["Wex",  "Wex", "Quas"]},
  { "Deafening Blast"   : ["Quas", "Wex", "Exort"]},
  { "Forge Spirit"      : ["Exort", "Exort", "Quas"]},

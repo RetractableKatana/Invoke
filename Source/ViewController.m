@@ -10,6 +10,8 @@
 
 #import "GameManager.h"
 
+static NSString * const kHighScoreKey = @"High Score";
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *firstSelection;
@@ -21,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *exortButton;
 @property (weak, nonatomic) IBOutlet UILabel *livesLeftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *winStreakLabel;
+@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
 
 @property (nonatomic, strong) NSArray *gameStates;
 @property (nonatomic, strong) NSArray *invokeData;
@@ -40,6 +43,9 @@
     
     _winStreak = 0;
     _livesLeft = 3;
+    
+    NSInteger highScore = [[[NSUserDefaults standardUserDefaults] objectForKey:kHighScoreKey] integerValue];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", highScore];
     
     _manager = [GameManager new];
     
@@ -86,6 +92,13 @@
     [[GameState alloc] initWithOnEnterBlock:^(id context)
      {
          self.winStreakLabel.text = [NSString stringWithFormat:@"Win Streak: %ld", ++weakSelf.winStreak];
+         
+         if (weakSelf.winStreak > [[[NSUserDefaults standardUserDefaults] objectForKey:kHighScoreKey] integerValue])
+         {
+            [[NSUserDefaults standardUserDefaults] setObject:@(weakSelf.winStreak)
+                                                      forKey:kHighScoreKey];
+             weakSelf.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", weakSelf.winStreak];
+         }
          
          // Animate the Win label.
          UILabel *winLabel = [[UILabel alloc] initWithFrame:CGRectZero];
