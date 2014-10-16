@@ -1,0 +1,12 @@
+[
+ {"Cold Snap"         : ["Quas", "Quas", "Quas"]},
+ { "Ghost Walk"        : ["Quas", "Quas", "Wex"]},
+ {  "Ice Wall"          : ["Quas", "Quas", "Exort"]},
+ { "Tornado"           : ["Wex",  "Wex", "Quas"]},
+ { "Deafening Blast"   : ["Quas", "Wex", "Exort"]},
+ { "Forge Spirit"      : ["Exort", "Exort", "Quas"]},
+ { "EMP"               : ["Wex", "Wex", "Wex"]},
+ { "Alacrity"          : ["Wex", "Wex", "Exort"]},
+ { "Chaos Meteor"      : ["Exort", "Exort", "Wex"]},
+ { "Sun Strike"        : ["Exort", "Exort", "Exort"]}
+]
