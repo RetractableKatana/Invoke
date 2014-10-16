@@ -28,6 +28,8 @@ typedef NS_ENUM(NSInteger, GameStateTag)
 
 - (void)progressGameState;
 - (void)selectedSpell:(NSString *)spell;
+- (NSString *)killStreakForKills:(NSInteger)kills;
 - (void)reset;
+- (void)resetKillStreak;
 
 @end

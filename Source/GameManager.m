@@ -13,9 +13,13 @@
 @interface GameManager ()
 
 @property (nonatomic, strong) NSArray *invokeData;
+@property (nonatomic, strong) NSDictionary *killStreakData;
+
 @property (nonatomic, strong) NSMutableArray *invokeDeck;
 @property (nonatomic, strong) NSMutableArray *selectedSpells;
 @property (nonatomic) NSInteger resetsLeft;
+
+@property (nonatomic, copy) NSString *currentKillStreak;
 
 @end
 
@@ -25,13 +29,21 @@
 {
     if (self = [super init])
     {
-        NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"spells" ofType:@"json"];
+        NSString *spellsPath = [[NSBundle mainBundle] pathForResource:@"spells" ofType:@"json"];
         
-        NSData *json = [NSData dataWithContentsOfFile:jsonPath];
+        NSData *spellsJSON = [NSData dataWithContentsOfFile:spellsPath];
         
-        _invokeData = [NSJSONSerialization JSONObjectWithData:json
+        _invokeData = [NSJSONSerialization JSONObjectWithData:spellsJSON
                                                       options:0
                                                         error:nil];
+        
+        NSString *killStreaksPath = [[NSBundle mainBundle] pathForResource:@"killstreaks" ofType:@"json"];
+        
+        NSData *killStreaksJSON = [NSData dataWithContentsOfFile:killStreaksPath];
+        
+        _killStreakData = [NSJSONSerialization JSONObjectWithData:killStreaksJSON
+                                                          options:0
+                                                            error:nil];
         
         NSUInteger spellCount = [_invokeData count];
         
@@ -49,6 +61,18 @@
     }
     
     return self;
+}
+
+- (NSString *)killStreakForKills:(NSInteger)kills
+{
+    NSString *killStreak = self.killStreakData[[NSString stringWithFormat:@"%ld", kills]];
+    
+    if (killStreak)
+    {
+        self.currentKillStreak = killStreak;
+    }
+    
+    return self.currentKillStreak;
 }
 
 - (void)progressGameState
@@ -114,8 +138,13 @@
     _invokeSpell = self.invokeData[randomIndex];
 }
 
+- (void)resetKillStreak
+{
+    self.currentKillStreak = nil;
+}
+
 - (void)reset
-{    
+{
     [_selectedSpells removeAllObjects];
     [self randomizeInvokeSpell];
     

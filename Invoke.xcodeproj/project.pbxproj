@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		092D8C3419EDEF8C0032F1F1 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D8C3319EDEF8C0032F1F1 /* GameManager.m */; };
 		092D8C3719EDF0450032F1F1 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D8C3619EDF0450032F1F1 /* GameState.m */; };
+		092D8C3919EFBD080032F1F1 /* killstreaks.json in Resources */ = {isa = PBXBuildFile; fileRef = 092D8C3819EFBD080032F1F1 /* killstreaks.json */; };
 		09DC339119EDE269004D0277 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC339019EDE269004D0277 /* main.m */; };
 		09DC339419EDE269004D0277 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC339319EDE269004D0277 /* AppDelegate.m */; };
 		09DC339719EDE269004D0277 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC339619EDE269004D0277 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 		092D8C3319EDEF8C0032F1F1 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		092D8C3519EDF0440032F1F1 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		092D8C3619EDF0450032F1F1 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
+		092D8C3819EFBD080032F1F1 /* killstreaks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = killstreaks.json; sourceTree = "<group>"; };
 		09DC338B19EDE268004D0277 /* Invoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Invoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DC338F19EDE268004D0277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09DC339019EDE269004D0277 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				09DC339D19EDE269004D0277 /* LaunchScreen.xib */,
 				09DC338E19EDE268004D0277 /* Supporting Files */,
 				09DC33B419EDE58D004D0277 /* spells.json */,
+				092D8C3819EFBD080032F1F1 /* killstreaks.json */,
 				09DC33B519EDE58D004D0277 /* TemplateIcon2x.png */,
 				092D8C3219EDEF8C0032F1F1 /* GameManager.h */,
 				092D8C3319EDEF8C0032F1F1 /* GameManager.m */,
@@ -219,6 +222,7 @@
 				09DC33B719EDE58D004D0277 /* TemplateIcon2x.png in Resources */,
 				09DC339A19EDE269004D0277 /* Main.storyboard in Resources */,
 				09DC339F19EDE269004D0277 /* LaunchScreen.xib in Resources */,
+				092D8C3919EFBD080032F1F1 /* killstreaks.json in Resources */,
 				09DC33B619EDE58D004D0277 /* spells.json in Resources */,
 				09DC339C19EDE269004D0277 /* Images.xcassets in Resources */,
 			);

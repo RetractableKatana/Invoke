@@ -93,6 +93,13 @@ static NSString * const kHighScoreKey = @"High Score";
      {
          self.winStreakLabel.text = [NSString stringWithFormat:@"Win Streak: %ld", ++weakSelf.winStreak];
          
+         NSString *winText = [weakSelf.manager killStreakForKills:weakSelf.winStreak];
+         
+         if (winText == nil)
+         {
+             winText = @"Correct";
+         }
+         
          if (weakSelf.winStreak > [[[NSUserDefaults standardUserDefaults] objectForKey:kHighScoreKey] integerValue])
          {
             [[NSUserDefaults standardUserDefaults] setObject:@(weakSelf.winStreak)
@@ -102,7 +109,7 @@ static NSString * const kHighScoreKey = @"High Score";
          
          // Animate the Win label.
          UILabel *winLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-         winLabel.text = @"Correct";
+         winLabel.text = winText;
          [weakSelf.view addSubview:winLabel];
          [winLabel sizeToFit];
          winLabel.center = weakSelf.view.center;
@@ -138,6 +145,7 @@ static NSString * const kHighScoreKey = @"High Score";
     [[GameState alloc] initWithOnEnterBlock:^(id context)
      {
          weakSelf.winStreak = 0;
+         [weakSelf.manager resetKillStreak];
          
          NSString *loseString = @"Wrong";
          NSTimeInterval animDur = 1.0;
