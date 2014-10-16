@@ -87,7 +87,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOZ-lG-7cd">
-                                        <rect key="frame" x="0.0" y="3" width="64" height="64"/>
+                                        <rect key="frame" x="8" y="3" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="NYU-H4-1RN"/>
                                             <constraint firstAttribute="width" constant="64" id="fMV-iM-l8p"/>
@@ -118,7 +118,7 @@
                                     <constraint firstAttribute="centerY" secondItem="Jzu-NZ-QY4" secondAttribute="centerY" constant="-1.5" id="GX7-JR-xwW"/>
                                     <constraint firstAttribute="trailing" secondItem="OWu-m6-p2K" secondAttribute="trailing" constant="8" id="UTF-pA-hWq"/>
                                     <constraint firstAttribute="centerY" secondItem="OWu-m6-p2K" secondAttribute="centerY" id="Xsu-oF-d23"/>
-                                    <constraint firstItem="FOZ-lG-7cd" firstAttribute="leading" secondItem="A62-iV-tic" secondAttribute="leading" id="YP1-l6-fe3"/>
+                                    <constraint firstItem="FOZ-lG-7cd" firstAttribute="leading" secondItem="A62-iV-tic" secondAttribute="leading" constant="8" id="YP1-l6-fe3"/>
                                     <constraint firstAttribute="centerX" secondItem="Jzu-NZ-QY4" secondAttribute="centerX" constant="0.5" id="YvH-uI-QMg"/>
                                     <constraint firstAttribute="centerY" secondItem="FOZ-lG-7cd" secondAttribute="centerY" constant="-1.5" id="i3g-Xw-GEm"/>
                                     <constraint firstAttribute="height" constant="67" id="xQ8-kk-csd"/>

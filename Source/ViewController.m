@@ -45,7 +45,7 @@ static NSString * const kHighScoreKey = @"High Score";
     _livesLeft = 3;
     
     NSInteger highScore = [[[NSUserDefaults standardUserDefaults] objectForKey:kHighScoreKey] integerValue];
-    self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", highScore];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", (long)highScore];
     
     _manager = [GameManager new];
     
@@ -97,7 +97,7 @@ static NSString * const kHighScoreKey = @"High Score";
          {
             [[NSUserDefaults standardUserDefaults] setObject:@(weakSelf.winStreak)
                                                       forKey:kHighScoreKey];
-             weakSelf.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", weakSelf.winStreak];
+             weakSelf.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", (long)weakSelf.winStreak];
          }
          
          // Animate the Win label.

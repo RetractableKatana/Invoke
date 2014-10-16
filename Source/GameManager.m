@@ -37,6 +37,7 @@
         
         _invokeDeck = [NSMutableArray arrayWithCapacity:spellCount];
         
+        // Populating indices, to get shuffled...
         for (NSUInteger i = 0; i < spellCount; i++)
         {
             [_invokeDeck addObject:@(i)];
@@ -82,7 +83,7 @@
             self.currentState = loseState;
         }
     }
-    else
+    else if (self.currentState.tag < GameStateThirdSelection)
     {
         NSUInteger nextIndex = [self.gameStates indexOfObject:self.currentState] + 1;
                 
@@ -127,6 +128,12 @@
 - (void)selectedSpell:(NSString *)spell
 {
     NSAssert(spell, @"spell was nil!");
+    
+    if (self.currentState.tag > GameStateThirdSelection)
+    {
+        return;
+    }
+    
     [_selectedSpells addObject:spell];
     _currentState.contextObject = [UIImage imageNamed:spell];
 }
