@@ -105,6 +105,7 @@ static NSString * const kHighScoreKey = @"High Score";
             [[NSUserDefaults standardUserDefaults] setObject:@(weakSelf.winStreak)
                                                       forKey:kHighScoreKey];
              weakSelf.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", (long)weakSelf.winStreak];
+             [[NSUserDefaults standardUserDefaults] synchronize];
          }
          
          // Animate the Win label.
